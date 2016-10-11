@@ -2,7 +2,7 @@
   {{title}}
 </h1>
 
-<input type="text" placeholder="Enter new task" autofocus required [(ngModel = "newTask")] /> 
+<input type="text" placeholder="Enter new task" autofocus required [(ngModel)] = "newTask" />{{newTask}}
 <button (click)="addTask()"> Add Task </button>
 
 <ul>
