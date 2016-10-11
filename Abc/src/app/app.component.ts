@@ -11,7 +11,7 @@ export class AppComponent {
   taskList : string[] = ["A","B","C","D","E","F"];
 
   addTask(value) {
-    this.taskList.push(value);
+    this.taskList.push('hi');
   }
 
 }
