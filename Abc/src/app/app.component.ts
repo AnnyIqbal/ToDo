@@ -18,15 +18,15 @@ export class AppComponent {
   }
 
   dltTask(i) {
-    //document.write(i);
-    this.taskList.splice(i,1);
+    this.taskList.splice(i,1); //i = index of task where dlt button was clicked
   }
 
-  editTask(eTask) {
+  editTask(eTask, i) {
   
     // input field me load krwao = this.edit;
     // or phir jo b likh k add button dbae to us index  value replace krwado
 
-    this.edit.anchor = eTask;
+    this.edit = prompt("Edit '" + eTask + "'");
+    this.taskList.splice(i,1,this.edit); //dlt eTask and insert edit: the prompt value
   }
 }
