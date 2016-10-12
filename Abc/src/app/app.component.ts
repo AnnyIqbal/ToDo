@@ -10,7 +10,8 @@ export class AppComponent {
   title = 'TO DO APP';
   taskList : string[] = ["Task1","Task2","Task3"];
   newTask : string;
-     
+  edit : string;
+
   addTask() {
     this.taskList.push(this.newTask);
     this.newTask = '';
@@ -21,5 +22,11 @@ export class AppComponent {
     this.taskList.splice(i,1);
   }
 
-  editTask() {}
+  editTask(eTask) {
+  
+    // input field me load krwao = this.edit;
+    // or phir jo b likh k add button dbae to us index  value replace krwado
+
+    this.edit.anchor = eTask;
+  }
 }

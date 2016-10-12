@@ -1,13 +1,27 @@
-<h1> {{title}} </h1>
+<div class="card">
+  
+  <img class="card-img-top" src="../Images/todo4.jpg" alt="Card image cap">
 
-<input type="text" placeholder="Enter new task" autofocus required [(ngModel)] = "newTask" />
-<button (click)="addTask()"> Add Task </button>
+  <div class="card-block">
+    <h1 class="card-title font-italic">{{title}}</h1>
 
-<ul>
-  <li *ngFor = "let task of taskList; let i=index"> 
-    {{task}} {{i}}
-    <input type="submit" value="Delete" (click)="dltTask(i)" /> 
-    <button > Edit </button>
-    <!--(click)="editTask()" -->
-  </li>
-</ul>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Enter new task" autofocus required [(ngModel)] = "newTask" />
+          <span class="input-group-btn">
+            <button class="btn btn-outline-primary" type="button" (click)="addTask()"> Add Task </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor = "let task of taskList; let i=index"> {{task}}
+      <button class="btn btn-outline-danger" (click)="dltTask(i)"> Delete </button> 
+      <button class="btn btn-outline-success" (click)="editTask(task)"> Edit </button>
+    </li>
+  </ul>
+
+</div>
