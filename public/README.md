@@ -1,4 +1,11 @@
-# Abc
+# To Do App using Angular2
+** Its my first complete project using Angular2**
+
+Technologies : Angular2, Typescript2, Bootstrap4
+
+Demo : [Visit My To Do App] (https://todoappangular2-1d1be.firebaseapp.com/)
+
+## Public
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.15.
 
