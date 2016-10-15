@@ -10,11 +10,24 @@ export class AppComponent {
   title = 'TO DO APP';
   taskList : string[] = ["Task1","Task2","Task3"];
   newTask : string;
-  edit : string;
+  index : number;
+  editFlag : boolean = false;
 
   addTask() {
-    this.taskList.push(this.newTask);
-    this.newTask = '';
+    if (this.newTask.length > 0) { //field is not empty 
+      if(this.editFlag === true) { //edit Task
+        this.taskList.splice(this.index ,1, this.newTask);
+        this.editFlag = false;
+        this.newTask = '';
+      }
+      else if (this.editFlag === false) { // add Task
+        this.taskList.push(this.newTask);
+        this.newTask = '';
+      }
+    }
+    else if(this.newTask.length === 0) { // field is empty
+      alert("Please enter task!"); // throw error
+    }
   }
 
   dltTask(i) {
@@ -22,11 +35,8 @@ export class AppComponent {
   }
 
   editTask(eTask, i) {
-  
-    // input field me load krwao = this.edit;
-    // or phir jo b likh k add button dbae to us index  value replace krwado
-
-    this.edit = prompt("Edit '" + eTask + "'");
-    this.taskList.splice(i,1,this.edit); //dlt eTask and insert edit: the prompt value
+    this.editFlag = true;
+    this.index = i;
+    this.newTask = eTask; // loaded task in input field 
   }
 }
