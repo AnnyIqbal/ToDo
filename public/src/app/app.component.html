@@ -9,8 +9,11 @@
       <div class="col-lg-6">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Enter new task" autofocus required [(ngModel)] = "newTask" />
-          <span class="input-group-btn">
+          <span *ngIf="newTask" class="input-group-btn">
             <button class="btn btn-outline-primary" type="button" (click)="addTask()"> Add Task </button>
+          </span>
+          <span *ngIf="!newTask" class="input-group-btn">
+            <button class="btn btn-outline-primary" type="button" (click)="addTask()" disabled> Add Task </button>
           </span>
         </div>
       </div>

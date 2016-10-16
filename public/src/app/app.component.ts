@@ -14,7 +14,6 @@ export class AppComponent {
   editFlag : boolean = false;
 
   addTask() {
-    if (this.newTask.length > 0) { //field is not empty 
       if(this.editFlag === true) { //edit Task
         this.taskList.splice(this.index ,1, this.newTask);
         this.editFlag = false;
@@ -24,10 +23,6 @@ export class AppComponent {
         this.taskList.push(this.newTask);
         this.newTask = '';
       }
-    }
-    else if(this.newTask.length === 0) { // field is empty
-      alert("Please enter task!"); // throw error
-    }
   }
 
   dltTask(i) {
