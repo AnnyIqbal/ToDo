@@ -14,6 +14,7 @@ export class AppComponent {
   editFlag : boolean = false;
 
   addTask() {
+    if(this.newTask !== ' ') {
       if(this.editFlag === true) { //edit Task
         this.taskList.splice(this.index ,1, this.newTask);
         this.editFlag = false;
@@ -24,7 +25,10 @@ export class AppComponent {
         this.newTask = '';
       }
   }
-
+  else {
+    alert("Error! Plz write something");
+  }
+}
   dltTask(i) {
     this.taskList.splice(i,1); //i = index of task where dlt button was clicked
   }
