@@ -12,6 +12,18 @@ export class AppComponent {
   newTask : string;
   index : number;
   editFlag : boolean = false;
+  flag: boolean = false;
+
+  // constructor() {
+  //   if(this.newTask) {
+  //     if(this.newTask !== ' ') {
+  //       this.flag = true;
+  //     }
+  //     //this.flag = (this.newTask === ' ')?true : false;
+  //   }
+  //  //this.flag = (this.newTask && this.newTask !== ' ')? true : false;
+  //  console.log(this.flag);
+  // }
 
   addTask() {
     if(this.newTask !== ' ') {
@@ -26,7 +38,7 @@ export class AppComponent {
       }
   }
   else {
-    alert("Error! Plz write something");
+    alert("Error! Plz write something"); //disable the add task button instead of alert msg
   }
 }
   dltTask(i) {
