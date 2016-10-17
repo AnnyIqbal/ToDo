@@ -16,3 +16,31 @@ h1 {
 img {
     width: 100%;
 }
+
+@media screen and (max-width: 544px) {
+    .card {
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 544px){
+    h1 {
+        color:red;
+    }
+ }
+@media screen and (max-width: 768px){ 
+    h1 {
+        background-color: blue;
+    }
+}
+@media screen and (max-width: 992px){ 
+    h1 {
+        background-color: pink;
+    }
+}
+@media screen and (max-width: 1200px){
+    h1 {
+        background-color: purple;
+    }
+ }
