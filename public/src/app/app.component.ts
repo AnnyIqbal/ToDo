@@ -14,19 +14,16 @@ export class AppComponent {
   editFlag : boolean = false;
   flag: boolean = false;
 
-  // constructor() {
-  //   if(this.newTask) {
-  //     if(this.newTask !== ' ') {
-  //       this.flag = true;
-  //     }
-  //     //this.flag = (this.newTask === ' ')?true : false;
-  //   }
-  //  //this.flag = (this.newTask && this.newTask !== ' ')? true : false;
-  //  console.log(this.flag);
-  // }
+  checker() : boolean {
+    if(this.newTask && this.newTask !== ' ') {
+      return true;
+    }
+    else if(!this.newTask || this.newTask === ' ') {
+      return false;
+    }
+  }
 
   addTask() {
-    if(this.newTask !== ' ') {
       if(this.editFlag === true) { //edit Task
         this.taskList.splice(this.index ,1, this.newTask);
         this.editFlag = false;
@@ -36,10 +33,6 @@ export class AppComponent {
         this.taskList.push(this.newTask);
         this.newTask = '';
       }
-  }
-  else {
-    alert("Error! Plz write something"); //disable the add task button instead of alert msg
-  }
 }
   dltTask(i) {
     this.taskList.splice(i,1); //i = index of task where dlt button was clicked
