@@ -12,7 +12,6 @@ export class AppComponent {
   newTask : string;
   index : number;
   editFlag : boolean = false;
-  flag: boolean = false;
 
   checker() : boolean { // chk for empty field and whitespace
     if(this.newTask && this.newTask !== ' ') { 
