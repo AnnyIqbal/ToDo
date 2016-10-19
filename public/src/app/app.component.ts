@@ -8,7 +8,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   title = 'TO DO APP';
-  taskList : string[] = ["Task1","Task2","Task3"];
+  //taskList : string[] = ["Task1","Task2","Task3"];
+  taskList = JSON.parse(localStorage.getItem("list")) || []; 
+  //agr localStorage m koi list hai to wo store krwado taskList me nhi hai to empty array declare krdo
   newTask : string;
   index : number;
   editFlag : boolean = false;
@@ -25,16 +27,19 @@ export class AppComponent {
   addTask() {
       if(this.editFlag === true) { //edit Task
         this.taskList.splice(this.index ,1, this.newTask);
+        localStorage.setItem("list",JSON.stringify(this.taskList)); 
         this.editFlag = false;
         this.newTask = '';
       }
       else if (this.editFlag === false) { // add Task
         this.taskList.push(this.newTask);
+        localStorage.setItem("list",JSON.stringify(this.taskList));
         this.newTask = '';
       }
 }
   dltTask(i) {
     this.taskList.splice(i,1); //i = index of task where dlt button was clicked
+    localStorage.setItem("list",JSON.stringify(this.taskList)); 
   }
 
   editTask(eTask, i) {
@@ -43,3 +48,8 @@ export class AppComponent {
     this.newTask = eTask; // loaded task in input field 
   }
 }
+
+/*
+var abc = JSON.parse(localStorage.getItem("list")) || [];
+localStorage.setItem("list", JSON.stringify(abc));
+*/
